@@ -13,6 +13,12 @@ public class PlayerScript : MonoBehaviour
     public LogicScript logic;
     public bool playerAlive = true;
 
+    public Transform groundChecker;
+    public bool onGround;
+    public float groundCheckerRadius;
+    public LayerMask groundLayer;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +32,10 @@ public class PlayerScript : MonoBehaviour
 
        horizontalMove = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
 
-        if (Input.GetKeyDown(KeyCode.Space) && playerAlive)
+       bool onGround = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundLayer);
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && playerAlive && onGround)
         {
             player.velocity = Vector2.up * jumpPower;
         }
@@ -35,6 +44,9 @@ public class PlayerScript : MonoBehaviour
 
         bool flipped = horizontalMove.x < 0;
         player.transform.rotation = Quaternion.Euler(new Vector3(0, flipped ? 180 : 0, 0));
+
+
+
 
     }
 
