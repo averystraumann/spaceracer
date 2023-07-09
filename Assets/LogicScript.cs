@@ -16,4 +16,9 @@ public class LogicScript : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
     }
+
+    public void startGame()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 }
