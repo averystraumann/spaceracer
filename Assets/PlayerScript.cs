@@ -32,7 +32,7 @@ public class PlayerScript : MonoBehaviour
 
        horizontalMove = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
 
-       onGround = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundLayer);
+       bool onGround = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundLayer);
 
 
         if (Input.GetKeyDown(KeyCode.Space) && playerAlive && onGround)
