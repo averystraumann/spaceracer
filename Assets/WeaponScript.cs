@@ -8,6 +8,7 @@ public class WeaponScript : MonoBehaviour
     public GameObject bullet;
     public LogicScript logic;
     public bool playerAlive = true;
+    public int timer = 0;
 
     private void Start()
     {

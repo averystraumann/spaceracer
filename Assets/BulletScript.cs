@@ -9,6 +9,10 @@ public class BulletScript : MonoBehaviour
     public Rigidbody2D rb;
 
 
+    private void Awake()
+    {
+        StartCoroutine(waiter());
+    }
 
 
     void Start()
@@ -27,6 +31,13 @@ public class BulletScript : MonoBehaviour
         {
             Destroy(gameObject) ;
         }
+    }
+
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Object.Destroy(gameObject); 
     }
 
 
