@@ -55,6 +55,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.collider.gameObject.tag.Equals("Kill"))
         {
             animator.SetBool("player alive", false);
+            Destroy(gameObject, 3f);
             logic.gameOver();
             playerAlive = false;
             

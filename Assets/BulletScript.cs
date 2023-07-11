@@ -9,6 +9,7 @@ public class BulletScript : MonoBehaviour
     public Rigidbody2D rb;
 
 
+
     private void Awake()
     {
         StartCoroutine(waiter());
@@ -27,10 +28,8 @@ public class BulletScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag.Equals("Barrier"))
-        {
-            Destroy(gameObject) ;
-        }
+        Destroy(gameObject) ;
+        
     }
 
 
