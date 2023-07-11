@@ -12,7 +12,6 @@ public class PlayerScript : MonoBehaviour
     public Animator animator;
     public LogicScript logic;
     public bool playerAlive = true;
-
     public Transform groundChecker;
     public bool onGround;
     public float groundCheckerRadius;
