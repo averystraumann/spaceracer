@@ -15,4 +15,17 @@ public class GreenAlien : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        {
+            if (collision.collider.CompareTag("bullet"))
+            {
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+            }
+
+        }
+    }
+    
 }
