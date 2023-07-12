@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D rb;
+    public float destroyTime;
 
 
 
@@ -35,7 +36,7 @@ public class BulletScript : MonoBehaviour
 
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(destroyTime);
         Object.Destroy(gameObject); 
     }
 
