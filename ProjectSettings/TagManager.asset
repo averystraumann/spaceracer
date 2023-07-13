@@ -8,6 +8,7 @@ TagManager:
   - Kill
   - Barrier
   - bullet
+  - cherry
   layers:
   - Default
   - TransparentFX
