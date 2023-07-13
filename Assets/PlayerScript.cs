@@ -37,7 +37,7 @@ public class PlayerScript : MonoBehaviour
 
         if (jumpCrystal) {
             animator.SetBool("jump boost", true);
-            jumpPower = 21;
+            jumpPower = 20;
             jcBoostTimer += Time.deltaTime;
             if  (jcBoostTimer > 5) {
                 jumpPower = 14;
