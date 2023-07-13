@@ -9,6 +9,7 @@ TagManager:
   - Barrier
   - bullet
   - cherry
+  - jump crystal
   layers:
   - Default
   - TransparentFX

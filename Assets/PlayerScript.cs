@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D player;
     public float speed;
     public Vector2 horizontalMove;
-    public float jumpPower;
+    public float jumpPower = 14;
     public Animator animator;
     public LogicScript logic;
     public bool playerAlive = true;
@@ -16,6 +16,8 @@ public class PlayerScript : MonoBehaviour
     public bool onGround;
     public float groundCheckerRadius;
     public LayerMask groundLayer;
+    public bool jumpCrystal = false;
+    public float jcBoostTimer = 0;
 
 
     // Start is called before the first frame update
@@ -33,11 +35,22 @@ public class PlayerScript : MonoBehaviour
 
        bool onGround = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundLayer);
 
+        if (jumpCrystal) {
+            jumpPower = 21;
+            jcBoostTimer += Time.deltaTime;
+            if  (jcBoostTimer > 5) {
+                jumpPower = 14;
+                jumpCrystal = false;
+                jcBoostTimer = 0;
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && playerAlive && onGround)
         {
-            player.velocity = Vector2.up * jumpPower;
+            player.velocity = Vector2.up * jumpPower; 
         }
+
+        
 
         animator.SetFloat("speed", Mathf.Abs(horizontalMove.magnitude) * speed);
 
@@ -60,10 +73,8 @@ public class PlayerScript : MonoBehaviour
             playerAlive = false;
             
         }
-        
-
     } 
-
+    
 
 
 
@@ -75,4 +86,7 @@ public class PlayerScript : MonoBehaviour
             player.transform.Translate(new Vector3(xMove, 0), Space.World);
         }
     }
+
+   
+
 }
