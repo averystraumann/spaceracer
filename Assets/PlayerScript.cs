@@ -36,11 +36,13 @@ public class PlayerScript : MonoBehaviour
        bool onGround = Physics2D.OverlapCircle(groundChecker.position, groundCheckerRadius, groundLayer);
 
         if (jumpCrystal) {
+            animator.SetBool("jump boost", true);
             jumpPower = 21;
             jcBoostTimer += Time.deltaTime;
             if  (jcBoostTimer > 5) {
                 jumpPower = 14;
                 jumpCrystal = false;
+                animator.SetBool("jump boost", false);
                 jcBoostTimer = 0;
             }
         }
