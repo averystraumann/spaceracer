@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LogicScript : MonoBehaviour
 {
     public GameObject gameOverScreen;
+    public GameObject finishScreen;
     public int cherryCount = 0;
     
     public void restartLevel()
@@ -21,6 +22,12 @@ public class LogicScript : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void finish()
+    {
+
+       finishScreen.SetActive(true );
     }
 
    
