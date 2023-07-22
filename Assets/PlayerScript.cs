@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -58,9 +59,6 @@ public class PlayerScript : MonoBehaviour
 
         bool flipped = horizontalMove.x < 0;
         player.transform.rotation = Quaternion.Euler(new Vector3(0, flipped ? 180 : 0, 0));
-
-
-
 
     }
 

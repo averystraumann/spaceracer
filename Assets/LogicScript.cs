@@ -7,6 +7,7 @@ public class LogicScript : MonoBehaviour
 {
     public GameObject gameOverScreen;
     public GameObject finishScreen;
+    public GameObject menuScreen;
     public int cherryCount = 0;
     
     public void restartLevel()
@@ -28,6 +29,18 @@ public class LogicScript : MonoBehaviour
     {
 
        finishScreen.SetActive(true );
+    }
+
+    public void quit() {
+        Application.Quit();
+    }
+
+    public void menu() {
+        menuScreen.SetActive(true);
+    }
+
+    public void back() {
+        menuScreen.SetActive(false);
     }
 
    
